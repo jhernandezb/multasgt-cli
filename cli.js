@@ -15,15 +15,15 @@ if (!regex.test(cli.input[0])) {
 }
 
 const match = cli.input[0].match(regex);
-chalk.blue(`Plate ${cli.input[0]}`)
-multasgt.emixtra(match[1], match[2]).then(multas => {
+console.log(chalk.blue(`Placa ${match[1]}-${match[2]}`));
+multasgt.emixtra(match[2], match[1]).then(multas => {
   multas.forEach(multa => {
-    console.log(chalk.red(`Desc: ${multa.place} , Ammount : ${multa.ammount} , Photo : ${multa.photo}`));
+    console.log(chalk.red(`Emixtra Desc: ${multa.place} , Ammount : ${multa.ammount} , Photo : ${multa.photo}\n`));
   });
 });
 
-multasgt.emetra(match[1], match[2]).then(multas => {
+multasgt.emetra(match[2], match[1]).then(multas => {
   multas.forEach(multa => {
-    console.log(chalk.red(`Desc: ${multa.place} , Ammount : ${multa.ammount} , Photo : ${multa.photo}`));
+    console.log(chalk.red(`Emetra Desc: ${multa.desc} , Ammount : ${multa.ammount} , Photo : ${multa.photo}\n`));
   });
 });
